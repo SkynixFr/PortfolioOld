@@ -1,0 +1,104 @@
+<template>
+  <div>
+    <v-app-bar app>
+      <v-btn text class="title" :ripple="false" to="/">
+        <span class="headline">
+          Portfolio | Day Romain
+        </span>
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn text class="ma-2 hidden-sm-and-down" to="/cv">
+        <span class="title font-weight-light">Curriculum vitae</span>
+      </v-btn>
+      <v-btn text class="ma-2 hidden-sm-and-down" to="/blog">
+        <span class="title font-weight-light">Blog</span>
+      </v-btn>
+      <v-btn text class="ma-2 hidden-sm-and-down" to="/project">
+        <span class="title font-weight-light">Project</span>
+      </v-btn>
+      <v-btn icon class="ma-2 hidden-sm-and-down" @click="changeTheme">
+        <v-icon>mdi-invert-colors</v-icon>
+      </v-btn>
+      <v-app-bar-nav-icon
+        @click.stop="drawer = !drawer"
+        class="hidden-md-and-up"
+      ></v-app-bar-nav-icon>
+    </v-app-bar>
+    <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>Menu</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list>
+        <v-list-item link to="/cv">
+          <v-list-item-icon>
+            <v-icon>mdi-clipboard-account</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Curriculum vitae</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link to="/blog">
+          <v-list-item-icon>
+            <v-icon>mdi-library-video</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Blog</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link to="/project">
+          <v-list-item-icon>
+            <v-icon>mdi-briefcase</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Project</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item @click="changeTheme">
+          <v-list-item-icon>
+            <v-icon>mdi-invert-colors</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Dark mode</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Navbar",
+  data() {
+    return {
+      theme: false,
+      drawer: null
+    };
+  },
+  methods: {
+    changeTheme() {
+      this.theme = !this.theme;
+      this.$vuetify.theme.dark = this.theme;
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.title {
+  &:before {
+    background-color: transparent;
+  }
+  .headline {
+    font-weight: 300;
+  }
+}
+.v-btn {
+  text-transform: none;
+}
+</style>
