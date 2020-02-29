@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app>
+    <v-app-bar app fixed>
       <v-btn text class="title" :ripple="false" to="/">
         <span class="headline">
           Portfolio | Day Romain
