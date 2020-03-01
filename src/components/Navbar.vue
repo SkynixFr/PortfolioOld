@@ -24,7 +24,7 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" fixed temporary>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>Portfolio</v-list-item-title>
@@ -35,6 +35,14 @@
       <v-divider></v-divider>
 
       <v-list>
+        <v-list-item link to="/">
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item link to="/cv">
           <v-list-item-icon>
             <v-icon>mdi-clipboard-account</v-icon>
