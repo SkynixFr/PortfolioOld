@@ -1,7 +1,9 @@
 <template>
-  <li :title="item.name" v-if="item.content">
-    <v-icon class="size-icons" :color="item.color">{{ item.icon }}</v-icon
-    ><span> : {{ item.content }}</span>
+  <li v-if="item.content">
+    <v-icon :title="item.name" class="size-icons" :color="item.color">{{
+      item.icon
+    }}</v-icon
+    ><span class="content-text"> : {{ item.content }}</span>
   </li>
   <li :title="item.name" v-else>
     <v-icon class="size-icons" :color="item.color">{{ item.icon }}</v-icon>
@@ -11,7 +13,12 @@
 <script>
 export default {
   name: "Item",
-  props: ["item"]
+  props: {
+    item: {
+      type: Object,
+      require: true
+    }
+  }
 };
 </script>
 
@@ -20,6 +27,12 @@ export default {
   font-size: 40px;
   @media screen and (max-width: 600px) {
     font-size: 25px;
+  }
+}
+.content-text {
+  font-size: 1.2em;
+  @media screen and (max-width: 600px) {
+    font-size: 0.9em;
   }
 }
 </style>

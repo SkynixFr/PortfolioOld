@@ -17,7 +17,20 @@
 import Item from "@/components/Item.vue";
 export default {
   name: "ListItems",
-  props: ["title", "items", "list"],
+  props: {
+    title: {
+      type: String,
+      require: true
+    },
+    items: {
+      type: Array,
+      require: true
+    },
+    list: {
+      type: Boolean,
+      require: true
+    }
+  },
   components: {
     Item
   }
