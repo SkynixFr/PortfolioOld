@@ -21,6 +21,9 @@ export default {
   components: {
     Navbar,
     Home
+  },
+  mounted() {
+    this.$vuetify.theme.dark = this.$store.state.theme;
   }
 };
 </script>

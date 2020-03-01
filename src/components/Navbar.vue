@@ -90,8 +90,8 @@ export default {
   },
   methods: {
     changeTheme() {
-      this.theme = !this.theme;
-      this.$vuetify.theme.dark = this.theme;
+      this.$store.commit("updateTheme", !this.$store.state.theme);
+      this.$vuetify.theme.dark = this.$store.state.theme;
     }
   }
 };
