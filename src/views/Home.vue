@@ -12,7 +12,7 @@
               and Web Development, I am looking for an internship from May to
               July 2020. Before my Bachelor, I attended a 2-year technical
               degree in Software Solutions and Trades Applications. I work very
-              well in team environment, I am self- taught person who loves
+              well in a team environment, I am a self- taught person who loves
               challenges. At the moment, I am working on a school project in
               order to create a new social network.
             </blockquote>

@@ -23,9 +23,6 @@ export default {
       type: Object,
       require: true
     }
-  },
-  mounted() {
-    console.log(this.item);
   }
 };
 </script>

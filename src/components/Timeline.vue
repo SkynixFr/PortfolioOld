@@ -39,9 +39,6 @@ export default {
     return {
       date: 2019
     };
-  },
-  mounted() {
-    console.log(this.items);
   }
 };
 </script>

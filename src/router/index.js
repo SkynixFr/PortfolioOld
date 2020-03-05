@@ -13,11 +13,15 @@ const routes = [
     path: "/cv",
     name: "CV",
     component: () => import("@/views/CV.vue")
+  },
+  {
+    path: "/project",
+    name: "Project",
+    component: () => import("@/views/Project.vue")
   }
 ];
 
 const router = new VueRouter({
-  mode: "history",
   base: process.env.BASE_URL,
   routes
 });

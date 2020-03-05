@@ -14,7 +14,7 @@
         <span class="title font-weight-light">Blog</span>
       </v-btn>
       <v-btn text class="ma-2 hidden-sm-and-down" to="/project">
-        <span class="title font-weight-light">Project</span>
+        <span class="title font-weight-light">Projects</span>
       </v-btn>
       <v-btn icon class="ma-2 hidden-sm-and-down" @click="changeTheme">
         <v-icon>mdi-invert-colors</v-icon>
@@ -64,7 +64,7 @@
             <v-icon>mdi-briefcase</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title>Project</v-list-item-title>
+            <v-list-item-title>Projects</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
