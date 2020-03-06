@@ -31,7 +31,9 @@ export default {
   overflow: hidden;
   clear: both;
 }
-.video-container iframe {
+.video-container iframe,
+.video-container object,
+.video-container embed {
   position: absolute;
   top: 0;
   left: 0;
