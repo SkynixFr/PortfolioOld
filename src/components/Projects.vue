@@ -6,7 +6,7 @@
       </p>
     </v-col>
     <Project
-      v-for="project in arrayProjects"
+      v-for="project in projects"
       :key="project.name"
       :project="project"
     />
@@ -21,37 +21,14 @@ export default {
     title: {
       type: String,
       require: true
+    },
+    projects: {
+      type: Array,
+      require: true
     }
   },
   components: {
     Project
-  },
-  data() {
-    return {
-      arrayProjects: [
-        {
-          name: "Co-op",
-          image: "images/co-op.png",
-          content: "Projet VueJs",
-          github: "https://github.com/SkynixFr/Co-op",
-          languages: ["VueJs", "Axios", "Vuex"]
-        },
-        {
-          name: "Redsquare",
-          image: "images/record.png",
-          content: "Projet tutoré",
-          github: "nothing...",
-          languages: ["VueJs", "Axios", "Vuex", "Leaflet"]
-        },
-        {
-          name: "Portfolio",
-          image: "images/profil.png",
-          content: "Projet VueJs",
-          github: "https://github.com/SkynixFr/Portfolio",
-          languages: ["VueJs", "Vuex"]
-        }
-      ]
-    };
   }
 };
 </script>

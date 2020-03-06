@@ -7,9 +7,10 @@
         min-width="300px"
         :src="project.image"
       ></v-img>
-      <v-card-subtitle class="headline-title">{{
-        project.name
-      }}</v-card-subtitle>
+      <v-divider></v-divider>
+      <v-card-subtitle class="headline-title">
+        {{ project.name }}
+      </v-card-subtitle>
       <v-card-text class="text--primary">
         <v-chip-group>
           <v-chip
@@ -18,7 +19,9 @@
             color="#00838F"
             :ripple="false"
             class="language"
-            >{{ language }}
+            dark
+          >
+            {{ language }}
           </v-chip>
         </v-chip-group>
       </v-card-text>
@@ -27,25 +30,19 @@
           <v-icon>fab fa-github</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
-        <v-btn @click="showDialog = true">
+        <v-btn @click="showDialog = true" text>
           <span>View more</span>
-          <v-icon>mdi-arrow-right</v-icon>
+          <v-icon size="20">mdi-arrow-right</v-icon>
         </v-btn>
       </v-card-actions>
     </v-card>
-    <v-dialog
-      v-model="showDialog"
-      max-width="600"
-      v-if="project.name == 'Co-op'"
-    >
+    <v-dialog v-model="showDialog" max-width="600">
       <v-card>
-        <v-card-title class="headline">
+        <v-card-title class="headline-text-modal">
           {{ project.name }}
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="content-modal">
           {{ project.content }}
-        </v-card-text>
-        <v-card-actions>
           <v-chip-group>
             <v-chip
               v-for="language in project.languages"
@@ -53,69 +50,16 @@
               color="#00838F"
               :ripple="false"
               class="language"
-              >{{ language }}
+              dark
+            >
+              {{ language }}
             </v-chip>
           </v-chip-group>
-          <v-spacer></v-spacer>
-          <v-btn icon :title="project.github" :href="project.github">
-            <v-icon>fab fa-github</v-icon>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text :href="project.href">
+            <span>View site</span>
           </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog
-      v-model="showDialog"
-      max-width="600"
-      v-if="project.name == 'Redsquare'"
-    >
-      <v-card>
-        <v-card-title class="headline">
-          {{ project.name }}
-        </v-card-title>
-        <v-card-text>
-          {{ project.content }}
-        </v-card-text>
-        <v-card-actions>
-          <v-chip-group>
-            <v-chip
-              v-for="language in project.languages"
-              :key="language.id"
-              color="#00838F"
-              :ripple="false"
-              class="language"
-              >{{ language }}
-            </v-chip>
-          </v-chip-group>
-          <v-spacer></v-spacer>
-          <v-btn icon :title="project.github" :href="project.github">
-            <v-icon>fab fa-github</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog
-      v-model="showDialog"
-      max-width="600"
-      v-if="project.name == 'Portfolio'"
-    >
-      <v-card>
-        <v-card-title class="headline">
-          {{ project.name }}
-        </v-card-title>
-        <v-card-text>
-          {{ project.content }}
-        </v-card-text>
-        <v-card-actions>
-          <v-chip-group>
-            <v-chip
-              v-for="language in project.languages"
-              :key="language.id"
-              color="#00838F"
-              :ripple="false"
-              class="language"
-              >{{ language }}
-            </v-chip>
-          </v-chip-group>
           <v-spacer></v-spacer>
           <v-btn icon :title="project.github" :href="project.github">
             <v-icon>fab fa-github</v-icon>
@@ -163,6 +107,24 @@ export default {
         background-color: transparent;
       }
     }
+  }
+}
+.headline-text-modal {
+  font-size: 1.5em !important;
+  @media screen and (max-width: 600px) {
+    font-size: 1.2em !important;
+  }
+}
+.content-modal {
+  font-size: 1em;
+  @media screen and (max-width: 600px) {
+    font-size: 0.9em;
+  }
+}
+.language {
+  cursor: inherit;
+  &:before {
+    background-color: transparent;
   }
 }
 </style>
