@@ -1,17 +1,23 @@
 <template>
   <v-expansion-panel-content>
-    <p class="timeline-headline" v-if="timeline.date">
-      {{ timeline.title }} |
-      <v-icon>mdi-calendar-range</v-icon>
-      <span class="timeline-date">{{ timeline.date }}</span>
-    </p>
-    <p class="timeline-headline" v-else>
-      {{ timeline.title }}
-    </p>
-    <p class="timeline-place">
-      <v-icon>mdi-map-marker</v-icon>{{ timeline.place }}
-    </p>
-    <p>{{ timeline.content }}</p>
+    <v-skeleton-loader
+      ref="skeleton"
+      :loading="load"
+      type="list-item-three-line"
+    >
+      <p class="timeline-headline" v-if="timeline.date">
+        {{ timeline.title }} |
+        <v-icon>mdi-calendar-range</v-icon>
+        <span class="timeline-date">{{ timeline.date }}</span>
+      </p>
+      <p class="timeline-headline" v-else>
+        {{ timeline.title }}
+      </p>
+      <p class="timeline-place">
+        <v-icon>mdi-map-marker</v-icon>{{ timeline.place }}
+      </p>
+      <p>{{ timeline.content }}</p>
+    </v-skeleton-loader>
   </v-expansion-panel-content>
 </template>
 
@@ -21,6 +27,10 @@ export default {
   props: {
     timeline: {
       type: Object,
+      require: true
+    },
+    load: {
+      type: Boolean,
       require: true
     }
   }

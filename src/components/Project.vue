@@ -1,41 +1,49 @@
 <template>
   <div class="projects-item">
-    <v-card class="card-project" max-width="300px" shaped>
-      <v-img
-        height="250px"
-        max-width="400px"
-        min-width="300px"
-        :src="project.image"
-      ></v-img>
-      <v-divider></v-divider>
-      <v-card-subtitle class="headline-title">
-        {{ project.name }}
-      </v-card-subtitle>
-      <v-card-text class="text--primary">
-        <v-chip-group>
-          <v-chip
-            v-for="language in project.languages"
-            :key="language.id"
-            color="#00838F"
-            :ripple="false"
-            class="language"
-            dark
-          >
-            {{ language }}
-          </v-chip>
-        </v-chip-group>
-      </v-card-text>
-      <v-card-actions>
-        <v-btn icon :title="project.github" :href="project.github">
-          <v-icon>fab fa-github</v-icon>
-        </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn @click="showDialog = true" text>
-          <span>View more</span>
-          <v-icon size="20">mdi-arrow-right</v-icon>
-        </v-btn>
-      </v-card-actions>
+    <v-card class="card-project" max-width="300">
+      <v-skeleton-loader
+        ref="skeleton"
+        :loading="onLoad"
+        type="image, card-heading, actions"
+        max-width="400"
+      >
+        <v-img
+          height="250px"
+          max-width="400px"
+          min-width="300px"
+          :src="project.image"
+        ></v-img>
+        <v-divider></v-divider>
+        <v-card-subtitle class="headline-title">
+          {{ project.name }}
+        </v-card-subtitle>
+        <v-card-text class="text--primary">
+          <v-chip-group>
+            <v-chip
+              v-for="language in project.languages"
+              :key="language.id"
+              color="#00838F"
+              :ripple="false"
+              class="language"
+              dark
+            >
+              {{ language }}
+            </v-chip>
+          </v-chip-group>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn icon :title="project.github" :href="project.github">
+            <v-icon>fab fa-github</v-icon>
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn @click="showDialog = true" text>
+            <span>View more</span>
+            <v-icon size="20">mdi-arrow-right</v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-skeleton-loader>
     </v-card>
+
     <v-dialog v-model="showDialog" max-width="600">
       <v-card>
         <v-card-title class="headline-text-modal">
@@ -76,7 +84,8 @@ export default {
   data() {
     return {
       showDialog: false,
-      image: this.project.image
+      image: this.project.image,
+      onLoad: true
     };
   },
   props: {
@@ -84,6 +93,11 @@ export default {
       type: Object,
       require: true
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.onLoad = false;
+    }, 1000);
   }
 };
 </script>

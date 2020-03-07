@@ -4,13 +4,18 @@
       <p class="headline-text">{{ title }}</p>
     </v-col>
     <v-col cols="12" md="10" offset-md="1" sm="12">
-      <v-expansion-panels inset focusable hover>
-        <v-expansion-panel v-for="item in items" :key="item.id">
+      <v-expansion-panels focusable hover>
+        <v-expansion-panel
+          v-for="item in items"
+          :key="item.id"
+          @click="loadData"
+        >
           <v-expansion-panel-header>{{ item.date }}</v-expansion-panel-header>
           <TimelineItem
             v-for="timeline in item.timeline"
             :key="timeline.id"
             :timeline="timeline"
+            :load="onLoad"
           />
         </v-expansion-panel>
       </v-expansion-panels>
@@ -37,8 +42,17 @@ export default {
   },
   data() {
     return {
-      date: 2019
+      date: 2019,
+      onLoad: true
     };
+  },
+  methods: {
+    loadData() {
+      setTimeout(() => {
+        this.onLoad = false;
+      }, 1000);
+      this.onLoad = true;
+    }
   }
 };
 </script>

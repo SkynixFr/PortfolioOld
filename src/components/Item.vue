@@ -1,8 +1,7 @@
 <template>
   <li v-if="item.content">
-    <v-icon :title="item.name" class="size-icons" :color="item.color">{{
-      item.icon
-    }}</v-icon
+    <v-icon :title="item.name" class="size-icons" :color="item.color">
+      {{ item.icon }} </v-icon
     ><span class="content-text"> : {{ item.content }}</span>
   </li>
   <li :title="item.name" v-else>

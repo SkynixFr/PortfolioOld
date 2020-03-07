@@ -19,11 +19,7 @@ export default {
     return {
       arrayVideo: [
         {
-          title: "Vidéo test",
-          src: "https://www.youtube.com/embed/Z3OjKkvicHo"
-        },
-        {
-          title: "Vidéo",
+          title: "Ireland",
           src: "https://www.youtube.com/embed/Z3OjKkvicHo"
         }
       ]

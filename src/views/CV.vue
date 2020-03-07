@@ -1,6 +1,14 @@
 <template>
   <v-container fluid>
     <v-row>
+      <v-col cols="12" md="12" sm="12">
+        <v-row justify="center"
+          ><v-btn href="CV.pdf" target="_blank">
+            Download CV
+            <v-icon>mdi-download</v-icon>
+          </v-btn>
+        </v-row>
+      </v-col>
       <v-col cols="12" md="10" offset-md="1" sm="12">
         <ListItems title="Contact details" :items="arrayContact" :list="true" />
       </v-col>

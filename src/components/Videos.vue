@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row justify="center">
     <v-col cols="12" sm="12" md="12">
       <p class="headline-text">
         {{ title }}
@@ -13,7 +13,15 @@
       v-for="video in videos"
       :key="video.title"
     >
-      <Video :video="video" />
+      <v-skeleton-loader
+        ref="skeleton"
+        :loading="onLoad"
+        type="card-heading,image"
+        min-height="100%"
+      >
+        <span class="video-title">{{ video.title }}</span>
+        <Video :video="video" />
+      </v-skeleton-loader>
     </v-col>
   </v-row>
 </template>
@@ -32,8 +40,18 @@ export default {
       require: true
     }
   },
+  data() {
+    return {
+      onLoad: true
+    };
+  },
   components: {
     Video
+  },
+  mounted() {
+    setTimeout(() => {
+      this.onLoad = false;
+    }, 1000);
   }
 };
 </script>
@@ -42,6 +60,14 @@ export default {
 .headline-text {
   font-size: 2em;
   font-weight: 300;
+  @media screen and (max-width: 600px) {
+    font-size: 1.5em;
+  }
+}
+.video-title {
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
   @media screen and (max-width: 600px) {
     font-size: 1.5em;
   }
