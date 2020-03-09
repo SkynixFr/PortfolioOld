@@ -22,7 +22,7 @@ export default {
           name: "Co-op",
           image: "images/co-op.png",
           content:
-            "Co-op est un projet développé en VueJs. C'est un clone de Slack, une application de communications collaborative.",
+            "Co-op is a project developed in VueJs. It is a clone of Slack, a collaborative communications application.",
           github: "https://github.com/SkynixFr/Co-op",
           languages: ["VueJs", "Axios", "Vuex"],
           href: "https://coopvuejs.netlify.com"
@@ -31,7 +31,7 @@ export default {
           name: "Redsquare",
           image: "images/record.png",
           content:
-            "Redsquare est le projet tutoré de ma licence CIASIE. C'est une application qui permet aux utilisateurs de diffuser un flux en direct.",
+            "Redsquare is the tutored project of my vocational Bachelor. It is an application that allows users to broadcast a live stream.",
           github: "",
           languages: ["VueJs", "Axios", "Vuex", "Leaflet", "MongoDB", "NodeJs"],
           href: ""
@@ -40,7 +40,7 @@ export default {
           name: "Portfolio",
           image: "images/profil.png",
           content:
-            "Elaboration  d'un portfolio numérique en Anglais présentant mon parcours scolaire et professionnel.",
+            "Development of a digital portfolio in English presenting my academic and professional background.",
           github: "https://github.com/SkynixFr/Portfolio",
           languages: ["VueJs", "Vuex"],
           href: "https://romainday.netlify.com"
@@ -51,5 +51,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
