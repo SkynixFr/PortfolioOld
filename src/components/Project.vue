@@ -14,9 +14,9 @@
           :src="project.image"
         ></v-img>
         <v-divider></v-divider>
-        <v-card-subtitle class="headline-title">
+        <v-card-title>
           {{ project.name }}
-        </v-card-subtitle>
+        </v-card-title>
         <v-card-text class="text--primary">
           <v-chip-group>
             <v-chip
