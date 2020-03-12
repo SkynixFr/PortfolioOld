@@ -3,7 +3,7 @@
     <v-app-bar app fixed>
       <v-btn text class="title" :ripple="false" to="/">
         <span class="headline-text" title="Home">
-          Portfolio | Day Romain
+          Portfolio | Romain Day
         </span>
       </v-btn>
       <v-spacer></v-spacer>

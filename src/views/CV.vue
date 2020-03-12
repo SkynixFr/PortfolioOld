@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" md="12" sm="12">
         <v-row justify="center"
-          ><v-btn href="CV.pdf" target="_blank">
+          ><v-btn href="CV_en.pdf" target="_blank">
             Download CV
             <v-icon>mdi-download</v-icon>
           </v-btn>

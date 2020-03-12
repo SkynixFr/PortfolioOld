@@ -4,6 +4,7 @@
       <p class="headline-text">
         {{ title }}
       </p>
+      <span class="subtitle-text">Here you can watch my videos</span>
     </v-col>
     <v-col
       cols="12"
@@ -20,6 +21,8 @@
         min-height="100%"
       >
         <span class="video-title">{{ video.title }}</span>
+        <br>
+        <span>A little video about my travel in Ireland.</span>
         <Video :video="video" />
       </v-skeleton-loader>
     </v-col>
@@ -62,6 +65,15 @@ export default {
   font-weight: 300;
   @media screen and (max-width: 600px) {
     font-size: 1.5em;
+  }
+}
+.subtitle-text {
+  font-size: 1em;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  @media screen and (max-width: 600px) {
+    font-size: 0.8em;
   }
 }
 .video-title {

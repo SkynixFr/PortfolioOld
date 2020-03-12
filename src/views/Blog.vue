@@ -20,7 +20,7 @@ export default {
       arrayVideo: [
         {
           title: "Ireland",
-          src: "https://youtu.be/mrqyXU48pXc"
+          src: "https://www.youtube.com/embed/mrqyXU48pXc"
         }
       ]
     };

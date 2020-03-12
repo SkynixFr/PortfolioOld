@@ -4,6 +4,7 @@
       <p class="headline-text">
         {{ title }}
       </p>
+      <span class="subtitle-text">Here you can see my projects</span>
     </v-col>
     <Project
       v-for="project in projects"
@@ -39,6 +40,15 @@ export default {
   font-weight: 300;
   @media screen and (max-width: 600px) {
     font-size: 1.5em;
+  }
+}
+.subtitle-text {
+  font-size: 1em;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  @media screen and (max-width: 600px) {
+    font-size: 0.8em;
   }
 }
 </style>
