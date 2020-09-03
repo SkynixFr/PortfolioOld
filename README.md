@@ -1,6 +1,6 @@
 # Portfolio
 
-Projet développé en Vue.JS
+Projet développé en Vue.js
 
 ## Project setup
 ```
