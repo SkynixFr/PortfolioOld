@@ -1,4 +1,6 @@
-# portfolio
+# Portfolio
+
+Projet développé en Vue.JS
 
 ## Project setup
 ```
